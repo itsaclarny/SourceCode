@@ -112,37 +112,6 @@ end
 
 local ddcheck
 local extframes = {}
-for i=1,4 do
-	local frame = Instance.new("Frame")
-	frame.ZIndex = 50
-	frame.BackgroundTransparency = 1
-	frame.Visible = false
-	if i == 1 then
-		frame.Size = UDim2.new(0,1000,0,-1000)
-	elseif i == 2 then
-		frame.Size = UDim2.new(0,1000,0,1000)
-		frame.Position = UDim2.new(1,0,0,0)
-	elseif i == 3 then
-		frame.Size = UDim2.new(0,-1000,0,1000)
-		frame.Position = UDim2.new(1,0,1,0)
-	elseif i == 4 then
-		frame.Size = UDim2.new(0,-1000,0,-1000)
-		frame.Position = UDim2.new(0,0,1,0)
-	end
-	table.insert(extframes, frame)
-	frame.InputBegan:connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
-			frame.Parent.Visible = false
-			if ddcheck then
-				ddcheck.arrow.Text = ">"
-				ddcheck.closed = not ddcheck.closed
-			end
-			for _,v in next, extframes do
-				v.Visible = false
-			end
-		end
-	end)
-end
 
 local function closeWindow(obj)
 	for _,v in next, extframes do
@@ -157,7 +126,7 @@ local library = {
     settings = {
         guiname = "Denta Recode",
 		title = "Denta Recode",
-        footer = " Want to try our new product? https://cipex.solutions",
+        footer = " Best cheat on Counter Blox : Reimagined v2",
         modal = true,
         font = Enum.Font.SourceSans,
         textsize = 16,
